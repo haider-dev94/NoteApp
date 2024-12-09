@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".view.MainActivity">
+
+    <TextView
+        android:id="@+id/title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:layout_centerHorizontal="true"
+        android:text="My Notes"
+        android:textSize="20sp"
+        android:textStyle="bold" />
+
+    <androidx.appcompat.widget.SearchView
+        android:id="@+id/searchView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_below="@id/title"
+        android:iconifiedByDefault="false"
+        android:theme="@style/CustomSearchView"
+        app:queryHint="Type somting to search"
+        app:closeIcon="@drawable/ic_close"
+        app:searchIcon="@drawable/ic_search"
+        app:searchHintIcon="@drawable/ic_search"
+        android:background="@drawable/ripple_round_shape"
+        android:backgroundTint="@color/dark_gray"
+        />
+<ImageView
+    android:id="@+id/imgNoData"
+    android:layout_width="250dp"
+    android:layout_height="250dp"
+    android:visibility="gone"
+    android:layout_centerInParent="true"
+    android:contentDescription="TODO"
+    android:src="@drawable/ic_no_data"/>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recyclerView"
+        android:visibility="gone"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginBottom="8dp"
+        android:layout_below="@id/searchView"
+        tools:listitem="@layout/note_item_layout" />
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/addNote"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="8dp"
+        android:layout_marginBottom="8dp"
+        android:contentDescription="add Note"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentEnd="true"
+        app:backgroundTint="@color/green"
+        android:src="@drawable/ic_edit"
+        app:tint="@color/white"
+        app:fabSize="normal"
+        tools:ignore="HardcodedText" />
+
+</RelativeLayout>
